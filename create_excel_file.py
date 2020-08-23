@@ -66,6 +66,8 @@ def create_new_file():
     workbook.create_sheet(index=3, title="test_data2")
     sheet = workbook['test_data2']
     test_data1_row = 5
+    title_cell = sheet['C' + str(test_data1_row-1)]
+    title_cell.value = 'This is test1 table'
     for key, value in test_data1.items():
         key_cell = sheet['C' + str(test_data1_row)]
         value_cell = sheet['D' + str(test_data1_row)]
