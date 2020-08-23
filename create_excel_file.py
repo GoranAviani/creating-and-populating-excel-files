@@ -13,6 +13,9 @@ def create_new_file():
     sheet_title = "business basic info"
     sheet.title = sheet_title
 
+    #create new sheet
+    workbook.create_sheet(index=1, title="This_is_sheet2")
+
     print("active sheet title: " + sheet_title)
 
     # Note: The first row or column integer
