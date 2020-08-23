@@ -1,5 +1,7 @@
 import openpyxl
 
+test_title1 = ['keys', 'values']
+test_data1 = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4'}
 
 def create_new_file():
     # Call a Workbook() function of openpyxl
@@ -48,6 +50,21 @@ def create_new_file():
 
     c2 = sheet.cell(row=1, column=2)
     c2.value = "Last name"
+
+    # create new sheet
+    workbook.create_sheet(index=2, title="test_data1")
+    sheet = workbook['test_data1']
+
+    for x in range(1, len(test_title1)+1):
+        current_cell = sheet['A' + str(x)]
+        current_cell.value = test_title1[x-1]
+
+
+
+
+
+
+
 
 
     # Anytime you modify the Workbook object
