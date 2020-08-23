@@ -13,9 +13,6 @@ def create_new_file():
     sheet_title = "business basic info"
     sheet.title = sheet_title
 
-    #create new sheet
-    workbook.create_sheet(index=1, title="This_is_sheet2")
-
     print("active sheet title: " + sheet_title)
 
     # Note: The first row or column integer
@@ -38,6 +35,20 @@ def create_new_file():
     # B2 means column = 2 & row = 2.
     c4 = sheet['B2']
     c4.value = "Aviani"
+
+
+
+    #create new sheet
+    workbook.create_sheet(index=1, title="This_is_sheet2")
+    sheet = workbook['This_is_sheet2']
+    cell1 = sheet.cell(row=1, column=1)
+
+    # writing values to cells
+    cell1.value = "First name"
+
+    c2 = sheet.cell(row=1, column=2)
+    c2.value = "Last name"
+
 
     # Anytime you modify the Workbook object
     # or its sheets and cells, the spreadsheet
