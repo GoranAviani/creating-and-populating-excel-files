@@ -55,6 +55,7 @@ def create_new_file():
     workbook.create_sheet(index=2, title="test_data1")
     sheet = workbook['test_data1']
 
+    #writing list to rows
     for x in range(1, len(test_title1)+1):
         current_cell = sheet['A' + str(x)]
         current_cell.value = test_title1[x-1]
