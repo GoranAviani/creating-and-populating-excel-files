@@ -2,6 +2,7 @@ import openpyxl
 
 test_title1 = ['keys', 'values']
 test_data1 = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4'}
+test_data2 = {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3', 'column_name4': 'value4'}
 
 def create_new_file():
     # Call a Workbook() function of openpyxl
@@ -61,7 +62,20 @@ def create_new_file():
         current_cell.value = test_title1[x-1]
 
 
+    #Creating simple table from simple dict
+    workbook.create_sheet(index=3, title="test_data2")
+    sheet = workbook['test_data2']
+    test_data1_row = 5
+    title_cell = sheet['C' + str(test_data1_row-1)]
+    title_cell.value = 'This is test1 table'
+    for key, value in test_data1.items():
+        key_cell = sheet['C' + str(test_data1_row)]
+        value_cell = sheet['D' + str(test_data1_row)]
 
+        key_cell.value = key
+        value_cell.value = value
+
+        test_data1_row += 1
 
 
 
