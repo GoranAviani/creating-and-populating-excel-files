@@ -93,6 +93,7 @@ def create_new_file():
     row_counter = 15
 
     for key_title, value_table in test_data3.items():
+        row_counter += 2
         title_cell = sheet['B' + str(row_counter - 1)]
         title_cell.value = key_title
 
