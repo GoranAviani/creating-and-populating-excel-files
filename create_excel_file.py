@@ -85,6 +85,19 @@ def create_new_file():
     test_data3 = {
         'Sweden_Pay_Now_Direct_debit': {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3',
                                         'column_name4': 'value4'}}
+    workbook.create_sheet(index=4, title="test_data3")
+    sheet = workbook['test_data3']
+    row_counter = 15
+    title_cell = sheet['C' + str(row_counter - 1)]
+    title_cell.value = 'Sweden_Pay_Now_Direct_debit'
+    for key, value in test_data3['Sweden_Pay_Now_Direct_debit'].items():
+        key_cell = sheet['C' + str(row_counter)]
+        value_cell = sheet['D' + str(row_counter)]
+
+        key_cell.value = key
+        value_cell.value = value
+
+        row_counter += 1
 
 
 
