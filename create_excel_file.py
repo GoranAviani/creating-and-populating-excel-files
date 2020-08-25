@@ -4,6 +4,8 @@ test_title1 = ['keys', 'values']
 test_data1 = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4'}
 test_data2 = {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3', 'column_name4': 'value4'}
 
+
+
 def create_new_file():
     # Call a Workbook() function of openpyxl
     # to create a new blank Workbook object
@@ -76,6 +78,16 @@ def create_new_file():
         value_cell.value = value
 
         test_data1_row += 1
+
+
+
+    #creating a simple table created from a dict with name as key
+    test_data3 = {
+        'Sweden_Pay_Now_Direct_debit': {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3',
+                                        'column_name4': 'value4'}}
+
+
+
 
 
 
