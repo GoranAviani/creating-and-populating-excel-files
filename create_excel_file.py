@@ -4,6 +4,8 @@ test_title1 = ['keys', 'values']
 test_data1 = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4'}
 test_data2 = {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3', 'column_name4': 'value4'}
 
+
+
 def create_new_file():
     # Call a Workbook() function of openpyxl
     # to create a new blank Workbook object
@@ -76,6 +78,35 @@ def create_new_file():
         value_cell.value = value
 
         test_data1_row += 1
+
+
+
+    #creating a simple table created from a dict with name as key
+    test_data3 = {
+        'Sweden_Pay_Now_Direct_debit': {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3',
+                                        'column_name4': 'value4'},
+        'Sweden_Pay_Now_Card': {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3',
+                                        'column_name4': 'value4'}
+    }
+    workbook.create_sheet(index=4, title="test_data3")
+    sheet = workbook['test_data3']
+    row_counter = 15
+
+    for key_title, value_table in test_data3.items():
+        title_cell = sheet['B' + str(row_counter - 1)]
+        title_cell.value = key_title
+
+        for key_column_name, value_result in test_data3[key_title].items():
+            key_cell = sheet['B' + str(row_counter)]
+            value_cell = sheet['C' + str(row_counter)]
+
+            key_cell.value = key_column_name
+            value_cell.value = value_result
+
+            row_counter += 1
+
+        row_counter += 2
+
 
 
 
