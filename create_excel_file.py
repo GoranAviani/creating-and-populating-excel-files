@@ -1,4 +1,5 @@
 import openpyxl
+from openpyxl.styles import Font
 
 test_title1 = ['keys', 'values']
 test_data1 = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4'}
@@ -95,6 +96,7 @@ def create_new_file():
     for key_title, value_table in test_data3.items():
         title_cell = sheet['B' + str(row_counter - 1)]
         title_cell.value = key_title
+        title_cell.font = Font(bold=True)
 
         for key_column_name, value_result in test_data3[key_title].items():
             key_cell = sheet['B' + str(row_counter)]
@@ -107,9 +109,22 @@ def create_new_file():
 
         row_counter += 2
 
+    #ceating a vertical table with keys as columns and values as data in rows
+
+    test_data4 = {
+        '2020': {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3',
+                                        'column_name4': 'value4'},
+        '2021': {'column_name1': 'value1', 'column_name2': 'value2', 'column_name3': 'value3',
+                                'column_name4': 'value4'}
+    }
 
 
 
+
+   # for key_title, value_table in test_data4.items():
+#
+ #       title_cell = sheet['B' + '3']
+  #      title_cell.value = key_title
 
 
 
