@@ -92,7 +92,7 @@ def create_new_file():
     sheet = workbook['test_data3']
     row_counter = 15
 
-    for key_title, value_table in test_data3:
+    for key_title, value_table in test_data3.items():
         title_cell = sheet['B' + str(row_counter - 1)]
         title_cell.value = key_title
 
