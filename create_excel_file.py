@@ -118,13 +118,20 @@ def create_new_file():
                                 'column_name4': 'value4'}
     }
 
-
-
-
-   # for key_title, value_table in test_data4.items():
-#
- #       title_cell = sheet['B' + '3']
-  #      title_cell.value = key_title
+    workbook.create_sheet(index=5, title="test_data4")
+    sheet = workbook['test_data4']
+    row_counter = 4
+    ALPHABET = ['A','B','C','D','F','G']
+    alphabet_counter = 0
+    for key_title, value_table in test_data4.items():
+        title_cell = sheet['B' + str(row_counter)]
+        title_cell.value = key_title
+        row_counter += 1
+        alphabet_counter = 0
+        for key_column_name, value_result in test_data4[key_title].items():
+            alphabet_counter += 1
+            column_cell = sheet[ALPHABET[alphabet_counter] + '3']
+            column_cell.value = key_column_name
 
 
 
